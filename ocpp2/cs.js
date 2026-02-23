@@ -316,6 +316,8 @@ module.exports = function (RED) {
         // acutal ocpp2.0.1 command
         if (fs.existsSync(schemaPath)) {
           let schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+          // Remove $id field to avoid URL parsing errors with URN format in newer Node.js versions
+          delete schema.$id;
 
           let val = schema_val.validate(ocpp2[MSGREQPAYLOAD], schema);
 
@@ -550,6 +552,8 @@ module.exports = function (RED) {
           //
           if (fs.existsSync(schemaPath)) {
             let schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+            // Remove $id field to avoid URL parsing errors with URN format in newer Node.js versions
+            delete schema.$id;
 
             let val = schema_val.validate(ocpp2[MSGREQPAYLOAD], schema);
 
@@ -641,6 +645,8 @@ module.exports = function (RED) {
             // acutal ocpp2.0.1 command
             if (fs.existsSync(schemaPath)) {
               let schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+              // Remove $id field to avoid URL parsing errors with URN format in newer Node.js versions
+              delete schema.$id;
 
               let val = schema_val.validate(ocpp2[MSGRESPAYLOAD], schema);
 
