@@ -1,6 +1,6 @@
 {
   "name": "@anl-ioc/node-red-contrib-ocpp2",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "description": "Node-Red modules to support OCPP 2.0.1 CSMS and CS entities",
   "main": "ocpp2/csms.js",
   "scripts": {
