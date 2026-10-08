@@ -76,7 +76,7 @@ module.exports = function (RED) {
       ? WSRTRPT_DEF
       : Number.parseInt(config.ws_rt_repeat);
     this.ws_rt_rnd_range = isNaN(Number.parseInt(config.ws_rt_rnd_range))
-      ? WSRTRNG_DEF
+      ? WSRTRND_DEF
       : Number.parseInt(config.ws_rt_rnd_range);
 
     this.NetStatus = NetStatus;
@@ -502,7 +502,7 @@ module.exports = function (RED) {
                   "RetryBackOffRandomRange",
                 )
               ) {
-                node.ws_rt_rnd_random =
+                node.ws_rt_rnd_range =
                   parseInt(msg.payload.data.RetryBackOffRandomRange) ||
                   node.ws_rt_rnd_range;
               }
@@ -513,7 +513,7 @@ module.exports = function (RED) {
                 )
               ) {
                 node.ws_rt_repeat =
-                  ParseInt(msg.payload.data.RetryBackOffRepeatTime) ||
+                  parseInt(msg.payload.data.RetryBackOffRepeatTime) ||
                   node.ws_rt_repeat;
               }
             }
